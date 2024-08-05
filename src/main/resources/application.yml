@@ -1,3 +1,11 @@
 spring:
   application:
     name: ocr_request_invoker
+
+ocr:
+  business:
+    url: ${{ secrets.BUSINESS_URL }}
+    secret: ${{ secrets.BUSINESS_SECRET }}
+  receipt:
+    url: ${{ secrets.RECEIPT_URL }}
+    secret: ${{ secrets.RECEIPT_SECRET }}
