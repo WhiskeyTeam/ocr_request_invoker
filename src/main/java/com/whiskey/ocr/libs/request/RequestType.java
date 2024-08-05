@@ -1,4 +1,4 @@
-package com.whiskey.ocr;
+package com.whiskey.ocr.libs.request;
 
 public enum RequestType {
     RECEIPT,

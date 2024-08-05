@@ -1,4 +1,4 @@
-package com.whiskey.ocr;
+package com.whiskey.ocr.libs.request;
 
 import lombok.*;
 
