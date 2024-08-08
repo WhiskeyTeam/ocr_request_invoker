@@ -1,3 +1,15 @@
 spring:
   application:
     name: ocr_request_invoker
+
+ocr:
+  business:
+#    url: "https://mf00jmkwbp.apigw.ntruss.com/custom/v1/32965/ae43fa0909815a39a619576aff03b94bee51207695cf6066e9bf13e609f28081/infer"
+    url: ${{ secrets.BUSINESS_URL }}
+#    secret: "cVhReUVIT0l1aWx4cEdmdnB1ZXZGVnFYaW5laVVNek0="
+    secret: ${{ secrets.BUSINESS_SECRET }}
+  receipt:
+#    url: "https://y9pm2s135x.apigw.ntruss.com/custom/v1/33193/3bf678201ff62e291fb5267cb9a6bb12dce9f30926dcdc65177280aca81531da/document/receipt"
+    url: ${{ secrets.RECEIPT_URL }}
+#    secret: "Tk5SZE9iaGVFdWZOV2hhb1NkZGlEZGdRU3V0WldUSG8="
+    secret: ${{ secrets.RECEIPT_SECRET }}

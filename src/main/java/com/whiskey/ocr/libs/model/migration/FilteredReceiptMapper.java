@@ -1,16 +1,16 @@
 package com.whiskey.ocr.libs.model.migration;
 
-import com.whiskey.ocr.libs.model.ResponseHeadForReceiptV2;
+import com.whiskey.ocr.libs.model.ResponseHeadForReceipt;
 import com.whiskey.ocr.libs.model.filtered.FilteredReceipt;
 
 import java.util.stream.Collectors;
 
 public class FilteredReceiptMapper {
-    public static FilteredReceipt map(ResponseHeadForReceiptV2 response) {
+    public static FilteredReceipt map(ResponseHeadForReceipt response) {
         FilteredReceipt filteredReceipt = new FilteredReceipt();
 
         // Map StoreInfo
-        ResponseHeadForReceiptV2.Image.Receipt.Result.StoreInfo sourceStoreInfo = response.getImages().get(0).getReceipt().getResult().getStoreInfo();
+        ResponseHeadForReceipt.Image.Receipt.Result.StoreInfo sourceStoreInfo = response.getImages().get(0).getReceipt().getResult().getStoreInfo();
         FilteredReceipt.StoreInfo storeInfo = new FilteredReceipt().new StoreInfo();
         storeInfo.setName(new FilteredReceipt().new StoreInfo().new Name());
         storeInfo.getName().setText(sourceStoreInfo.getName().getText());
@@ -33,7 +33,7 @@ public class FilteredReceiptMapper {
         filteredReceipt.setStoreInfo(storeInfo);
 
         // Map PaymentInfo
-        ResponseHeadForReceiptV2.Image.Receipt.Result.PaymentInfo sourcePaymentInfo = response.getImages().get(0).getReceipt().getResult().getPaymentInfo();
+        ResponseHeadForReceipt.Image.Receipt.Result.PaymentInfo sourcePaymentInfo = response.getImages().get(0).getReceipt().getResult().getPaymentInfo();
         FilteredReceipt.PaymentInfo paymentInfo = new FilteredReceipt().new PaymentInfo();
 
         paymentInfo.setDate(new FilteredReceipt().new PaymentInfo().new Date());
@@ -69,7 +69,7 @@ public class FilteredReceiptMapper {
                 filteredItem.getPrice().getPrice().setText(item.getPrice().getPrice().getText());
 
                 filteredItem.getPrice().setUnitPrice(new FilteredReceipt().new SubResult().new Item().new Price().new UnitPrice());
-                filteredItem.getPrice().getUnitPrice().setText(item.getPrice().getUnitPrice().getText());
+//                filteredItem.getPrice().getUnitPrice().setText(item.getPrice().getUnitPrice().getText());
 
                 return filteredItem;
             }).collect(Collectors.toList()));

@@ -1,4 +1,4 @@
-package com.whiskey.ocr.libs.request.business;
+package com.whiskey.ocr.libs.request.form;
 
 import lombok.*;
 

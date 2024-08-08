@@ -6,10 +6,13 @@ import java.util.*;
 
 @Getter
 @Setter
-public class ReceiptPayload {
+public class RequestPayloadForBusiness {
     private String version;
     private String requestId;
     private long timestamp;
-    // todo. private List<> images = new ArrayList<>();
-    private List<ImageHeadForReceipt> images = new ArrayList<>();
+    private String lang;
+
+    private List<ImageHeadForBusiness> images = new ArrayList<>();
+    private boolean enableTableDetection;
 }
+

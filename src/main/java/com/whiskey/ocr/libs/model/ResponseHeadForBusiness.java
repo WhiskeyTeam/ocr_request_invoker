@@ -7,7 +7,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class ResponseHeadForBusinessV2 {
+public class ResponseHeadForBusiness {
     private String version;
     private String requestId;
     private long timestamp;

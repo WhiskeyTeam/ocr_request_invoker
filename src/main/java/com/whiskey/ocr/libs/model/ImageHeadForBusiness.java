@@ -4,7 +4,7 @@ import lombok.*;
 
 @Getter
 @Setter
-public class ImageHead {
+public class ImageHeadForBusiness {
     private String format;
     private String url;
     private String data;

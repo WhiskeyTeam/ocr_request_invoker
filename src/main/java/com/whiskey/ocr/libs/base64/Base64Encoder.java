@@ -1,4 +1,4 @@
-package com.whiskey.ocr.libs.request.base64;
+package com.whiskey.ocr.libs.base64;
 
 import java.util.Base64;
 
