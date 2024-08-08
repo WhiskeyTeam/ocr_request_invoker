@@ -14,16 +14,16 @@ import java.util.Map;
 @RestController
 @RequestMapping("/ocr")
 public class RequestHandler {
-    @Value("${ ocr.business.url }")
+    @Value("${ocr.business.url}")
     private String businessUrl;
 
-    @Value("${ ocr.business.secret }")
+    @Value("${ocr.business.secret}")
     private String businessSecret;
 
-    @Value("${ ocr.receipt.url }")
+    @Value("${ocr.receipt.url}")
     private String receiptUrl;
 
-    @Value("${ ocr.receipt.secret }")
+    @Value("${ocr.receipt.secret}")
     private String receiptSecret;
 
     @PostMapping("/business")
