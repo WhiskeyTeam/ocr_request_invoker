@@ -35,6 +35,15 @@ jobs:
     #     mkdir -p src/main/resources
     #     echo "${{ secrets.APPLICATION_YML }}" | base64 --decode > src/main/resources/application.yml
     #     find src
+    - name: Set Yaml
+      uses: microsoft/variable-substitution@v1
+      with:
+        files: src/main/resources/application.yml
+      env:
+        ocr.business.url: ${{ secrets.BUSINESS_URL }}
+        ocr.business.secret: ${{ secrets.BUSINESS_SECRET }}
+        ocr.receipt.url: ${{ secrets.RECEIPT_URL }}
+        ocr.receipt.secret: ${{ secrets.RECEIPT_SECRET }}
     - name: Grant permission for gradlew
       run: chmod +x ./gradlew
     - name: Build with Gradle
